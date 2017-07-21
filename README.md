@@ -4,20 +4,14 @@
 
 First you need to install socket.io python client
 
-Download it from https://pypi.python.org/pypi/socketIO-client
-
-Extract the file and Navigate to that folder
-
-Type the command ``python setup.py install``
-
-It will install socket.io python client
+``pip install socketio-client``
 
 ## Usage
 
-Now download the iot.py file and include that in your python file/project
+Now download the biot.py file and include that in your python file/project
 
 ```python
-from iot import *
+from biot import *
 
 
 APP_KEY = <YOUR APP KEY>
