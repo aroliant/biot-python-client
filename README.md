@@ -11,33 +11,30 @@ First you need to install socket.io python client
 Now download the biot.py file and include that in your python file/project
 
 ```python
-from biot import *
+from biot.client import BIoTClient
 
+DEVICE_ID = 1 		# Your Device ID
+DEVICE_TOKEN = "" 	# Your Access Token
 
-APP_KEY = <YOUR APP KEY>
-DEV_KEY = <YOUR DEV KEY>
-SECRECT = <YOUR SECRECT KEY>
+client = BIoTClient("<Server IP Address>", <port>, params={'token': DEVICE_TOKEN})
 
-#Create an IoT Client 
+client.wait(2) # Give some time to connect to Server
 
-IoT = IoT(APP_KEY,DEV_KEY,SECRECT)
+def lightUpdate(status):
+    print("Light update received" ,status);
+    if status == 'true':
+        # Turn your Device ON
+        pass
+    else:
+        # Turn your Device ON
+        pass
+	
+
+client.on_update(1, 'status', lightUpdate)
+
+client.wait()
 
 ```
-Provide the APP,DEV and SECRET Keys
 
-### Functionalities
+Run the program using ``python -u sample.py``
 
-```python
-
-#Connecting to IoT Server
-IoT.connect()
-
-# Setting the State
-IoT.setData("YOUR STATE / DATA")
-
-# Retriving the State
-IoT.getData("YOUR STATE / DATA")
-
-#Disconnecting from the IoT Server
-IoT.disconnect()
-```
