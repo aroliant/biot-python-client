@@ -8,7 +8,7 @@ First you need to install socket.io python client
 
 ## Usage
 
-Now download the biot.py file and include that in your python file/project
+Now download the client.py file from biot and include that in your python file/project
 
 ```python
 from biot.client import BIoTClient
